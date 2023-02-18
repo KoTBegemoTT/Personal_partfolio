@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Pavel Lebedev</title>
+</head>
+<body>
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<div class="row justify-content-center my-3">
+    <div class="col-5">
+        <img class="img-fluid" src="{% static 'portfolio/resumeImage.png' %}">
+    </div>
+</div>
+
+<div class="mt-2">
+    <h1>Портфолио</h1>
+</div>
+<div class="row">
+    {% for project in projects %}
+    <div class="col-lg-4 col-md-6">
+<!--        todo project id-->
+        <a href="{% url 'portfolio:view_project' %}">
+            <img class="img-fluid mb-2" src="{{ project.image.url }}">
+        </a>
+        <h3>{{ project.name }}</h3>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+</body>
+</html>
