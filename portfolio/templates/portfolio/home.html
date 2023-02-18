@@ -29,8 +29,7 @@
 <div class="row">
     {% for project in projects %}
     <div class="col-lg-4 col-md-6">
-<!--        todo project id-->
-        <a href="{% url 'portfolio:view_project' %}">
+        <a href="{% url 'portfolio:view_project' project.id %}">
             <img class="img-fluid mb-2" src="{{ project.image.url }}">
         </a>
         <h3>{{ project.name }}</h3>
