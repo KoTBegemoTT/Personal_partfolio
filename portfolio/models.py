@@ -9,3 +9,12 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    description = models.CharField(max_length=250)
+    image = models.ImageField(upload_to='portfolio', blank=True)
+
+    def __str__(self):
+        return f'{self.project} - {self.description[0:30]}...'
