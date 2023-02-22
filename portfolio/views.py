@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from portfolio.models import Project
+from portfolio.models import Project, ProjectImage
 
 
 def home(request):
@@ -8,5 +8,11 @@ def home(request):
 
 
 def view_project(request, pk):
-    project = get_object_or_404(Project, pk=pk)
-    return render(request, 'portfolio/view_project.html', context={'project': project})
+    project = get_object_or_404(Project, id=pk)
+    images = ProjectImage.objects.filter(project=pk)[:2]
+    print(images)
+    return render(request, 'portfolio/view_project.html', context={'project': project, 'images': images})
+
+
+def test(request):
+    return render(request, 'portfolio/test.html')

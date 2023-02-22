@@ -22,7 +22,9 @@ from portfolio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('projects/', include('portfolio.urls'))
+    path('projects/', include('portfolio.urls')),
+
+    path('test/', views.test)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
