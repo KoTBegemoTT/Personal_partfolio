@@ -9,8 +9,7 @@ def home(request):
 
 def view_project(request, pk):
     project = get_object_or_404(Project, id=pk)
-    images = ProjectImage.objects.filter(project=pk)[:2]
-    print(images)
+    images = ProjectImage.objects.filter(project=pk)
     return render(request, 'portfolio/view_project.html', context={'project': project, 'images': images})
 
 
