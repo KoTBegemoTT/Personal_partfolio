@@ -23,9 +23,15 @@
     </div>
 </div>
 <div class="row justify-content-center mt-2 mt-3">
-    <div class="col ml-5">
-        <a class="btn btn-lg btn btn-outline-primary" href="#" role="button">Протестировать</a>
-    </div>
+    {% if project.test_url %}
+        <div class="col ml-5">
+            <a class="btn btn-lg btn btn-outline-primary" href="{{ project.test_url }}" role="button">Протестировать</a>
+        </div>
+    {% else %}
+        <div class="col ml-5">
+            <a class="btn btn-lg btn btn-outline-secondary" href="#" role="button">Протестировать</a>
+        </div>
+    {% endif %}
     <div class="col-7 mt-2">
         Ссылка на Github: <a target="_blank" href="{{project.url}}">{{ project.url }}</a>
     </div>
