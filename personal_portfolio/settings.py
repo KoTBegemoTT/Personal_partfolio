@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'portfolio',
     'password_generator',
+    'todo_app',
 ]
 
 MIDDLEWARE = [

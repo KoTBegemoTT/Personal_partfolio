@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>current todos</title>
+</head>
+<body>
+{% extends 'todo_app\base.html' %}
+{% block content%}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-9">
+        {% if todos %}
+            <h1>{{ todos.count }} Current Todo{{todos.count|pluralize}}</h1>
+        {% else %}
+            <h1>Current todos</h1>
+        {% endif %}
+    </div>
+</div>
+<div class="row justify-content-center mt-4">
+    {% if todos %}
+        <div class="col-md-9">
+            <div class="list-group">
+                {% for todo in todos %}
+                    <a href="{% url 'todo_app:view_todo' todo.id %}" class="list-group-item
+                    list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
+                        <b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:60 }}{% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="col-md-7 text-center">
+            <h2>Looks like you don't have any todos! Great work.</h2>
+            <a class="btn btn-primary mt-2" href="{% url 'todo_app:create_todo' %}">New todo</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+</body>
+</html>
