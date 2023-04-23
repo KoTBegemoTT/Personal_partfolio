@@ -129,3 +129,8 @@ try:
     from .local_settings import *
 except ImportError:
     print("There is no 'local_settings' file may be you on a prod?")
+
+try:
+    from .production_settings import *
+except ImportError:
+    print("There is no 'production_settings' file may be you on a dev?")
