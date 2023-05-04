@@ -3,7 +3,7 @@ from random import choices
 
 
 def home(request):
-    return render(request, r"password_generator\home.html")
+    return render(request, r"password_generator/home.html")
 
 
 def password(request):
@@ -24,8 +24,8 @@ def password(request):
         password_symbols += special_symbols
 
     generated_password = "".join(choices(password_symbols, k=length))
-    return render(request, r"password_generator\password.html", {'password': generated_password})
+    return render(request, r"password_generator/password.html", {'password': generated_password})
 
 
 def about(request):
-    return render(request, r"password_generator\about.html")
+    return render(request, r"password_generator/about.html")
