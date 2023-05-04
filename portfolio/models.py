@@ -6,7 +6,6 @@ class Project(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='portfolio', blank=True)
     url = models.URLField(blank=True)
-    # Todo fill this field
     test_url = models.CharField(max_length=100, blank=True)
 
     def __str__(self):

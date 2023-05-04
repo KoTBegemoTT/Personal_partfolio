@@ -25,9 +25,6 @@ urlpatterns = [
     path('projects/', include('portfolio.urls')),
     path('password_generator/', include('password_generator.urls')),
     path('todo_app/', include('todo_app.urls')),
-
-    # Todo remove this
-    path('test/', views.test)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
