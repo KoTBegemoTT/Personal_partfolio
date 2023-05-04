@@ -1,0 +1,8 @@
+.project-hovered{
+   border: 1px solid transparent;
+}
+
+.project-hovered:hover {
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
