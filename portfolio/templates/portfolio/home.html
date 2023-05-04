@@ -28,7 +28,7 @@
 </div>
 <div class="row">
     {% for project in projects %}
-    <div class="col-lg-4 col-md-6 mt-4">
+    <div class="col-lg-4 col-md-6 mt-4 project-hovered">
         <a href="{% url 'portfolio:view_project' project.id %}">
             <img class="img-fluid rounded mb-2" src="{{ project.image.url }}">
         </a>
