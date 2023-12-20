@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'dish_db',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'HOST': 'database',
         'PORT': '5432',
     }
 }

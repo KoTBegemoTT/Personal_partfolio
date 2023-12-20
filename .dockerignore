@@ -1,0 +1,7 @@
+*.log
+*.pot
+*.pyc
+__pycache__
+/static
+#personal_portfolio/local_settings.py
+personal_portfolio/production_settings.py
